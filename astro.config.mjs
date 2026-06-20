@@ -8,7 +8,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  // Change this to your actual site URL
+  site: 'https://username.github.io',
+  // Change this to your repository name if deploying to a subpath (e.g., '/my-repo/')
+  base: '/',
   integrations: [mdx(), sitemap()],
 
   fonts: [
