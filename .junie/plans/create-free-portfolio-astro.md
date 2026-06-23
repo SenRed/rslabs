@@ -79,7 +79,7 @@ graph LR
 
 # Delivery Steps
 
-### * Step 1: Initialize Astro Project & Install Dependencies
+### ✓ Step 1: Initialize Astro Project & Install Dependencies
 The foundation of the website is established with all necessary tools.
 
 - Scaffold a new Astro project using the official `blog` template.
@@ -87,7 +87,7 @@ The foundation of the website is established with all necessary tools.
 - Set up the project directory structure (`src/pages`, `src/content`, `src/components`).
 - Initialize a Git repository for version control.
 
-###   Step 2: Build Portfolio Landing Page & Layout
+### ✓ Step 2: Build Portfolio Landing Page & Layout
 The main landing page is professional, responsive, and contains all essential portfolio information.
 
 - Create a `Layout.astro` component for consistent site structure (Navbar, Footer).
@@ -95,7 +95,7 @@ The main landing page is professional, responsive, and contains all essential po
 - Implement the `Skills` and `Featured Projects` sections on the homepage.
 - Ensure the design is mobile-friendly using Tailwind's responsive utilities.
 
-###   Step 3: Implement Blog System & Content Collections
+### ✓ Step 3: Implement Blog System & Content Collections
 The blog is functional and ready for writing technical articles.
 
 - Configure Astro's Content Collections for the blog.
@@ -103,7 +103,7 @@ The blog is functional and ready for writing technical articles.
 - Design the dynamic `[slug].astro` page for rendering individual Markdown/MDX posts.
 - Add sample blog posts to verify the rendering and styling.
 
-###   Step 4: Configure & Deploy to GitHub Pages
+### ✓ Step 4: Configure & Deploy to GitHub Pages
 The website is live and accessible via a public URL at no cost.
 
 - Update `astro.config.mjs` with the `site` and `base` URLs for GitHub Pages.

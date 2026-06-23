@@ -4,73 +4,135 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<section class="py-12 md:py-20">
-		<div class="flex flex-col md:flex-row items-center gap-8">
-			<div class="flex-1 text-center md:text-left">
-				<h1 class="text-4xl md:text-6xl font-bold mb-4">
-					Hi, I'm a <span class="text-blue-600">Software Engineer</span>
-				</h1>
-				<p class="text-xl text-gray-600 mb-8 max-w-2xl">
-					I build high-performance web applications and share my technical journey through my blog.
-				</p>
-				<div class="flex flex-wrap justify-center md:justify-start gap-4">
-					<a href="/blog" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-						Read my blog
-					</a>
-					<a href="/about" class="px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-						About me
-					</a>
+	<!-- Hero Section -->
+	<section class="relative min-h-[600px] pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-x-hidden">
+		<div class="relative">
+			<!-- Background Image using pseudo-style approach -->
+ 		<div 
+ 			class="absolute top-0 right-0 bottom-0 left-0 -z-10 opacity-0 animate-fade-slide pointer-events-none hidden md:block"
+ 			style={`background: url(${import.meta.env.BASE_URL}centric.webp) no-repeat; background-size: contain; background-position: right center;`}
+ 		></div>
+			
+			<style>
+				@keyframes fade-slide {
+					0% { opacity: 0; transform: translateX(6rem); }
+					100% { opacity: 1; transform: none; }
+				}
+				.animate-fade-slide {
+					animation: fade-slide 3s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+				}
+				@media (min-width: 992px) {
+					h1 { margin-top: 5rem !important; }
+				}
+				@media (min-width: 1200px) {
+					.customers { margin-top: 6rem !important; }
+				}
+				.text-primary { color: #007bff !important; }
+				.text-dark { color: #2C3446 !important; }
+			</style>
+
+			<div class="flex flex-wrap items-center -mx-4">
+				<div class="w-full md:w-6/12 lg:w-5/12 px-4 mb-12 lg:mb-0">
+					<h1 class="font-bold text-[3.5rem] mb-6 leading-[1.2] tracking-tight text-dark">
+						<span id="type" class="text-primary">User centric</span><br />
+						innovation
+					</h1>
+					<p class="lead text-[#88879F] mb-10 leading-relaxed pr-12">
+						On aide les entreprises à moderniser leurs architectures, fiabiliser leurs plateformes et accélérer leur capacité de livraison grâce à des pratiques d'ingénierie éprouvées et une expertise cloud à grande échelle.
+					</p>
+					<div class="mb-4">
+						<h4 class="mt-2 pb-2 font-bold text-dark">Vous avez un projet ?</h4>
+						<a
+							href="https://form.typeform.com/to/zwCFrkTB"
+							data-mode="popup"
+							data-submit-close-delay="1"
+							target="_blank"
+							class="typeform-share button inline-block px-[1.5rem] py-[0.5rem] bg-[#007bff] !text-white rounded-[2px] font-bold hover:bg-[#0069d9] hover:border-[#0062cc] transition-all text-center text-[1.25rem] leading-[1.5] border border-[#007bff]"
+						>
+							Quels sont vos besoins ?
+						</a>
+						<script is:inline>
+							(function () {
+								var qs, js, q, s, d = document,
+									gi = d.getElementById,
+									ce = d.createElement,
+									gt = d.getElementsByTagName,
+									id = "typef_orm_share",
+									b = "https://embed.typeform.com/";
+								if (!gi.call(d, id)) {
+									js = ce.call(d, "script");
+									js.id = id;
+									js.src = b + "embed.js";
+									q = gt.call(d, "script")[0];
+									q.parentNode.insertBefore(js, q)
+								}
+							})()
+						</script>
+					</div>
 				</div>
-			</div>
-			<div class="w-48 h-48 md:w-64 md:h-64 bg-gray-200 rounded-full flex items-center justify-center text-4xl overflow-hidden">
-				<img src="/favicon.svg" alt="Profile" class="w-1/2 opacity-20" />
+				<div class="w-full lg:w-7/12 px-4">
+					<!-- This column is intentionally empty to let the background image shine on desktop -->
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-12 border-t border-gray-100">
-		<h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-			{['Astro', 'React', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Python', 'Docker', 'Git'].map((skill) => (
-				<div class="p-4 bg-gray-50 rounded-lg text-center font-medium border border-gray-100">
-					{skill}
-				</div>
-			))}
-		</div>
-	</section>
+	<!--&lt;!&ndash; Social Proof Section &ndash;&gt;-->
+	<!--<section class="mt-24 py-12 bg-white border-y border-gray-100">-->
+	<!--	<div>-->
+	<!--		<div class="customers swiper-container overflow-hidden">-->
+	<!--			<div class="swiper-wrapper flex items-center h-20">-->
+	<!--				{[-->
+	<!--					{ name: 'CrowdStrike', logo: import.meta.env.BASE_URL + 'logos/CrowdStrike_logo.svg' },-->
+	<!--					{ name: 'Deezer', logo: import.meta.env.BASE_URL + 'logos/Deezer_logo,_2023.svg' },-->
+	<!--					{ name: 'Figaro Classified', logo: import.meta.env.BASE_URL + 'logos/figaroclassifieds-rvb.png' },-->
+	<!--				].map((client) => (-->
+	<!--					<div class="swiper-slide flex justify-center items-center px-8 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-500">-->
+	<!--						<img src={client.logo} alt={client.name} class="h-10 w-auto object-contain" />-->
+	<!--					</div>-->
+	<!--				))}-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</section>-->
 
-	<section class="py-12 border-t border-gray-100">
-		<div class="flex justify-between items-center mb-8">
-			<h2 class="text-3xl font-bold">Featured Projects</h2>
-			<a href="https://github.com" class="text-blue-600 hover:underline">View all on GitHub &rarr;</a>
-		</div>
-		<div class="grid md:grid-cols-2 gap-8">
-			<div class="group border border-gray-200 rounded-xl overflow-hidden hover:border-blue-400 transition-colors">
-				<div class="h-48 bg-gray-100 flex items-center justify-center">
-					<span class="text-gray-400 group-hover:scale-110 transition-transform">Project 1 Image</span>
-				</div>
-				<div class="p-6">
-					<h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
-					<p class="text-gray-600 mb-4">A fast, SEO-friendly portfolio built with Astro and Tailwind CSS.</p>
-					<div class="flex gap-2">
-						<span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded font-medium">Astro</span>
-						<span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded font-medium">Tailwind</span>
-					</div>
-				</div>
-			</div>
-			<div class="group border border-gray-200 rounded-xl overflow-hidden hover:border-blue-400 transition-colors">
-				<div class="h-48 bg-gray-100 flex items-center justify-center">
-					<span class="text-gray-400 group-hover:scale-110 transition-transform">Project 2 Image</span>
-				</div>
-				<div class="p-6">
-					<h3 class="text-xl font-bold mb-2">E-commerce API</h3>
-					<p class="text-gray-600 mb-4">A scalable REST API built with Node.js and PostgreSQL.</p>
-					<div class="flex gap-2">
-						<span class="px-2 py-1 bg-green-50 text-green-600 text-xs rounded font-medium">Node.js</span>
-						<span class="px-2 py-1 bg-green-50 text-green-600 text-xs rounded font-medium">PostgreSQL</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+
+
+	<!-- Scripts for Typing and Swiper -->
+	<script>
+		// Import libraries via CDN
+		import TypeIt from 'https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/index.es.js';
+		import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+		// Typing Animation
+		new TypeIt("#type", {
+			strings: ["User centric", "Data centric"],
+			speed: 200,
+			breakLines: false,
+			loop: true,
+			nextStringDelay: 2000,
+			waitUntilVisible: true,
+			startDelete: true,
+		}).go();
+
+		// Swiper Initialization
+		new Swiper('.swiper-container', {
+			slidesPerView: 5,
+			slidesPerGroup: 5,
+			spaceBetween: 0,
+			loop: true,
+			speed: 1500,
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+			},
+			breakpoints: {
+				320: { slidesPerView: 1, groupsPerView: 1 },
+				640: { slidesPerView: 2, groupsPerView: 2 },
+				768: { slidesPerView: 3, groupsPerView: 3 },
+				1024: { slidesPerView: 4, groupsPerView: 4 },
+				1200: { slidesPerView: 5, groupsPerView: 5 },
+			},
+		});
+	</script>
 </Layout>

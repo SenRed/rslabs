@@ -9,9 +9,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   // Change this to your actual site URL
-  site: 'https://username.github.io',
+  site: 'https://senred.github.io',
   // Change this to your repository name if deploying to a subpath (e.g., '/my-repo/')
-  base: '/',
+  base: '/rslabs/',
   integrations: [mdx(), sitemap()],
 
   fonts: [

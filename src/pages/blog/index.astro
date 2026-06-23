@@ -33,7 +33,7 @@ const posts = (await getCollection('blog')).sort(
 								<p class="text-gray-500 text-sm mb-2">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
-								<h2 class={`font-bold mb-2 group-hover:text-blue-600 transition-colors ${index === 0 ? 'text-3xl' : 'text-xl'}`}>
+								<h2 class={`font-bold mb-2 group-hover:text-cyan-600 transition-colors ${index === 0 ? 'text-3xl' : 'text-xl'}`}>
 									{post.data.title}
 								</h2>
 								<p class="text-gray-600 line-clamp-2">
